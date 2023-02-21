@@ -19,6 +19,10 @@ body {
     background-color: #fffff0;
     color: darkgreen; 
   }
+
+  #main-page {
+    align-items: start;
+ }
   
   footer {
     flex: 0 30px;
@@ -76,9 +80,7 @@ body {
     background-color: lightgreen !important;
     border: 2px solid darkgreen !important;
     color: darkgreen !important;
-  }
-
-  
+  }  
   
   @media (max-height: 600px) {
     header {
