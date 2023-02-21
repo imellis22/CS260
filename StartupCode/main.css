@@ -21,7 +21,62 @@ body {
   }
 
   #main-page {
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1 calc(100vh - 110px);
+ }
+
+ .student {
+    height: 20%;
+    width: 85%;
+    background-color: #fffff0;
+    border: 4px solid darkgreen;
+    margin: 5px;
+    border-radius: 15%;
+    display: flex;
+    justify-content: left;
+ }
+
+ .student-info{
+    height: 100%;
+    width: fit-content;
+    white-space: nowrap;
+    display: flex;
+    align-items:center;
+    margin-left: 2%;
+ }
+
+ .buttons {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background-color: gold;
+    border-radius: 35%;
+ }
+
+ .circle {
+    border-radius: 50% !important;
+    margin: 2px;
+    width: 50px !important;
+    height: 50px !important;
+ }
+
+ .good {
+    background-color: green !important;
+ }
+
+ .bad {
+    background-color: red !important;
+ }
+
+ .okay {
+    background-color: gold !important;
+ }
+
+ .question-form {
+    width: 100%;
  }
   
   footer {
@@ -91,5 +146,8 @@ body {
     }
     main {
       flex: 1 100vh;
+    }
+    #main-page {
+        flex: 1 100vh;
     }
   }
