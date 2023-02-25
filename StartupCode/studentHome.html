@@ -27,47 +27,33 @@
               </li>
             </menu>
             <div class="text-end">
-              <button type="button" class="btn me-2 logout-btn">Logout</button>
-          </div>
+              <a class="nav-link" href="login.html">
+                 <button type="button" class="btn me-2 logout-btn">Logout</button>
+              </a>
+            </div>
           </nav>
         </header>
         
         <main id="main-page">
-            <div class="student">
-                <div class="student-info">Student name
-                </div>
-                <form class="question">
-                  <span>
-                    <input type="text" id="username" placeholder="Have a question? Enter it here!"/>
-                  </span>
-                  <span>
-                    <button type="button" class="btn btn-primary" id="login-btn"> Submit </button>
-                  </span>
-                </form>
-                <span class="buttons">
-                    <button type = submint class="btn circle good"></button>
-                    <button type = submint class="btn circle okay"></button>
-                    <button type = submint class="btn circle bad"></button>
-                </span>
+          <div class="split  student-view">
+            <div class="column">
+              <button type="button" class="btn student-good"></button>
             </div>
-            <div class="student">
-                <div class="student-info">Student name
-                </div>
-                <form class="question-form">
-                  <span>
-                    <input type="text" id="username" placeholder="Have a question? Enter it here!"/>
-                  </span>
-                  <span>
-                    <button type="button" class="btn btn-primary" id="login-btn"> Submit </button>
-                  </span>
-                </form>
-                <span class="buttons">
-                    <button type = submint class="btn circle good"></button>
-                    <button type = submint class="btn circle okay"></button>
-                    <button type = submint class="btn circle bad"></button>
-                </span>
+            <div class="column">
+              <button type="button" class="btn student-okay"></button>
             </div>
-        </main>
+            <div class="column">
+              <button type="button" class="btn student-bad"></button>
+            </div>
+          </div>
+          <form style="width: 50%;">
+            <div>
+              <input type="text" class="question-form" placeholder="Enter your question here!" />
+            </div>
+            <div style="display: flex; justify-content: center;">
+              <button type="submit" class="btn btn-primary" id="question-btn">Submit</button>
+            </div>
+          </form>
         </main>
         <footer class="text-light">
             <div class="container-fluid">
