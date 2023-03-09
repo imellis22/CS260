@@ -37,13 +37,13 @@
         <main id="main-page">
           <div class="split  student-view">
             <div class="column">
-              <button type="button" class="btn student-good"></button>
+              <button onmouseover="boldBorder(this)" onmouseleave="noBorder(this)"  type="button" class="btn student-good"> Good </button>
             </div>
             <div class="column">
-              <button type="button" class="btn student-okay"></button>
+              <button onmouseover="boldBorder(this)" onmouseleave="noBorder(this)" type="button" class="btn student-okay"> Okay </button>
             </div>
             <div class="column">
-              <button type="button" class="btn student-bad"></button>
+              <button onmouseover="boldBorder(this)" onmouseleave="noBorder(this)" type="button" class="btn student-bad"> Bad </button>
             </div>
           </div>
           <form style="width: 50%;">
@@ -65,5 +65,5 @@
               >
             </div>
         </footer>
-
+        <script src="studentHome.js"></script>
     </body>
