@@ -8,23 +8,22 @@ function addStudent() {
     name.classList.add('student-info');
     name.textContent = "Student Name"; 
 
-    student.appendChild(name); //adds the student name to the main student div
+    const question = document.createElement('div');
+    question.classList.add('question');
+    question.textContent = "Question will go here";
 
+    name.appendChild(question); //adds the question child to the name div
+
+    student.appendChild(name); //adds the student name with the question child to the main student div
 
     const buttons = document.createElement('span'); //creates the span for the buttons
     buttons.classList.add('buttons');
 
-    const goodButton = document.createElement('button');
-    const okayButton = document.createElement('button');
-    const badButton = document.createElement('button');
+    const responseButton = document.createElement('button');
 
-    goodButton.classList.add('btn', 'circle', 'good');
-    okayButton.classList.add('btn', 'circle', 'okay');
-    badButton.classList.add('btn', 'circle', 'bad');
+    responseButton.classList.add('btn', 'btn-primary', 'response-btn');
 
-    buttons.appendChild(goodButton);
-    buttons.appendChild(okayButton);
-    buttons.appendChild(badButton);
+    buttons.appendChild(responseButton);
 
     student.appendChild(buttons);//adds buttons to the student div
     
