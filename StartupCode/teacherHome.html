@@ -38,6 +38,23 @@
         </header>
         
         <main id="main-page">
+          <!-- Setup for the modal -->
+          <div id="theModal" class="modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="close" onclick="closeModal()">close</span>
+                <h2>Modal Header</h2>
+              </div>
+              <div class="modal-body">
+                <p>Some text in the Modal Body</p>
+                <p>Some other text...</p>
+              </div>
+              <div class="modal-footer">
+                <h3>Modal Footer</h3>
+              </div>
+            </div>
+          </div>
+          <!-- End of modal setup-->
             <div class="student">
                 <div class="student-info">Student name
                   <div class="question">
@@ -45,7 +62,7 @@
                   </div>
                 </div>
                 <span class="buttons">
-                    <button type = submint class="btn btn-primary response-btn">Give Answer</button>
+                    <button type = submint onclick="makeModal()" class="btn btn-primary response-btn">Give Answer</button>
                 </span>
             </div>
             <div class="student" style="border: 4px solid green;">

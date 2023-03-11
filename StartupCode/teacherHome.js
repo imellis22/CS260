@@ -37,4 +37,14 @@ function setName(){
     userName.textContent = "Welcome " + localStorage.getItem('teacherName');
 }
 
+function makeModal(){
+    const modal = document.getElementById("theModal");
+    modal.style.display = "block";
+}
+
+function closeModal(){
+    const modal = document.getElementById("theModal");
+    modal.style.display = "none";
+}
+
 setName();
