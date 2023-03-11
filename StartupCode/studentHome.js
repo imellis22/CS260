@@ -9,7 +9,7 @@ function noBorder(x) {
 
 function setName(){
     const userName = document.querySelector('#studentName');
-    userName.textContent = localStorage.getItem('studentName');
+    userName.textContent = "Welcome " + localStorage.getItem('studentName');
 }
 
 setName();

@@ -34,7 +34,7 @@ function addStudent() {
 
 function setName(){
     const userName = document.querySelector('#teacherName');
-    userName.textContent = localStorage.getItem('teacherName');
+    userName.textContent = "Welcome " + localStorage.getItem('teacherName');
 }
 
 setName();
