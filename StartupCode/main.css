@@ -30,10 +30,12 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     flex: 1 calc(100vh - 110px);
+    overflow: auto;
  }
 
  .student {
     height: 20%;
+    min-height: 20%;
     width: 85%;
     background-color: #fffff0;
     border: 4px solid gold;

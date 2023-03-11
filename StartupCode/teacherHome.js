@@ -22,6 +22,7 @@ function addStudent() {
     const responseButton = document.createElement('button');
 
     responseButton.classList.add('btn', 'btn-primary', 'response-btn');
+    responseButton.textContent = "Give Answer";
 
     buttons.appendChild(responseButton);
 
