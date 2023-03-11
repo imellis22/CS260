@@ -30,5 +30,11 @@ function addStudent() {
     
 
     studentList.appendChild(student);
-
 }
+
+function setName(){
+    const userName = document.querySelector('#teacherName');
+    userName.textContent = localStorage.getItem('teacherName');
+}
+
+setName();
