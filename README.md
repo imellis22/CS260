@@ -24,3 +24,5 @@ example of valid json = {"n":}
 valid hyperlinks are created using href
 
 To point to another DNS record you should use the CNAME record type.  
+
+You can use the fetch command to execute any HTTP method such as POST, PUT, and DELETE. It doesn't only do GET. 
