@@ -47,12 +47,19 @@
                 <span class="close" onclick="closeModal()"><i class="fa fa-times-circle" aria-hidden="true"></i></span>
               </div>
               <div class="modal-body">
-                <p>Some text in the Modal Body</p>
-                <p>Some other text...</p>
+                <p id="theQuestion"></p>
+                <form style="height: 70%;">
+                  <div style="height: 70%;">
+                    <textarea type="text" id="theAnswer" name="theAnswer" placeholder="Enter answer here"></textarea>
+                  </div>
+                  <button type="submit" onclick="saveAnswer()" class="btn btn-primary response-btn">Give Answer</button>
+                </form>
               </div>
+              <!--
               <div class="modal-footer">
                 <h3>Modal Footer</h3>
               </div>
+            -->
             </div>
           </div>
           <!-- End of modal setup-->
@@ -63,7 +70,7 @@
                   </div>
                 </div>
                 <span class="buttons">
-                    <button type = "submit" onclick="makeModal(this.id)" class="btn btn-primary response-btn">Give Answer</button>
+                    <button type = "submit" onclick="makeModal(this)" class="btn btn-primary response-btn">Give Answer</button>
                 </span>
             </div>
             <div class="student" style="border: 4px solid green;">
@@ -73,7 +80,7 @@
                 </div>
               </div>
               <span class="buttons">
-                  <button type = "submit" onclick="makeModal(this.id)" class="btn btn-primary response-btn">Give Answer</button>
+                  <button type = "submit" onclick="makeModal(this)" class="btn btn-primary response-btn">Give Answer</button>
               </span>
             </div>
             <div class="student" style="border: 4px solid red;">
@@ -83,7 +90,7 @@
                 </div>
               </div>
               <span class="buttons">
-                  <button type = "submit" onclick="makeModal(this.id)" class="btn btn-primary response-btn">Give Answer</button>
+                  <button type = "submit" onclick="makeModal(this)" class="btn btn-primary response-btn">Give Answer</button>
               </span>
             </div>
         </main>

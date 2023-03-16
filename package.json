@@ -1,0 +1,15 @@
+{
+  "name": "cs260",
+  "version": "1.0.0",
+  "description": "Is your mom or wife always wondering what she should make for dinner for the family? Or better yet, maybe you are \r always wondering what you should make for dinner for yourself or family? This app will be designed to solve that problem.\r It will allow you to view and like recipes and then from there get recommendations on what you should cook if you can't \r decide for yourself. Along with that, you will be able to get cooking advice or just advice on good meals from other users who are also using the app. With this app, deciding what to cook should become a breeze.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "give-me-a-joke": "^0.5.1"
+  }
+}

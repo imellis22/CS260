@@ -2,13 +2,24 @@ let numStudents = 0;
 let students = []; 
 const theStudent = 
 {
-    number:"0",
+    number: 0,
     question:""
 }
 
-function addStudent() {
+let currQuestion;
+let reading = 0;
+
+function addStudent(currStu) {
     const theStudent = new Object();
-    theStudent.number = numStudents;
+    let currValue; 
+    if(reading === 0){
+        currValue = numStudents;
+    }
+    else if(reading === 1){
+        currValue = currStu;
+    }
+
+    theStudent.number = currValue;
 
     const studentList = document.querySelector('#main-page');
 
@@ -21,12 +32,11 @@ function addStudent() {
 
     const question = document.createElement('div');
     question.classList.add('question');
-    question.textContent = "Question will go here";
+    question.textContent = `Question will go here ${currValue}`;
     theStudent.question = question.textContent;
 
     console.log(theStudent.number);
     console.log(theStudent.question);
-    students.push(theStudent);
 
     name.appendChild(question); //adds the question child to the name div
 
@@ -38,10 +48,10 @@ function addStudent() {
     const responseButton = document.createElement('button');
 
     responseButton.classList.add('btn', 'btn-primary', 'response-btn');
-    responseButton.type = "submit";
-    responseButton.id = numStudents;
+    responseButton.id = currValue;
     responseButton.textContent = "Give Answer";
-    responseButton.onclick = makeModal;
+    responseButton.setAttribute("onclick","makeModal(this)");
+//    responseButton.onclick = "makeModal(this)"; ///////
 
     buttons.appendChild(responseButton);
 
@@ -49,7 +59,39 @@ function addStudent() {
     
 
     studentList.appendChild(student);
-    ++numStudents;
+
+    console.log(students[0]);
+    //students.push(theStudent);
+    if(reading === 0){  // This makes it so the program only increments the number of students and adds to array if not reading in. 
+        students.push(theStudent);
+        ++numStudents;
+    }
+    localStorage.setItem("Students", JSON.stringify(students));
+    localStorage.setItem("numStudents", numStudents);
+}
+
+function readInStudents(){ //going to need to read in the students
+    let i = 0;
+    reading = 1; 
+
+    //Need to check if the array in local storage is null, and if it is don't get it from the storage
+    students = JSON.parse(localStorage.getItem('Students'));
+    //console.log(students.length);
+    let length;
+    if(students !== null){
+        length = students.length;
+    }
+    else{
+        students = [];
+        length = 0;
+    }
+    while(i < length){
+        addStudent(i);
+        ++i;
+    }
+    numStudents = i;
+    reading = 0;
+    console.log(`This is the value of reading! ${reading}`);
 }
 
 function setName(){
@@ -57,13 +99,15 @@ function setName(){
     userName.textContent = "Welcome " + localStorage.getItem('teacherName');
 }
 
-function makeModal(clicked_id){
-    const num = clicked_id;
-    console.log(num);
+function makeModal(clicked){
+    console.log(`this is the clicked id ${clicked.id}`);
     const modal = document.getElementById("theModal");
     modal.style.display = "block";
-    const question = students[0].question;
+    const question = students[clicked.id].question;
     console.log(question);
+    const theQuestion = document.getElementById("theQuestion");
+    theQuestion.textContent = `${question}`;
+    currQuestion = clicked.id;          //This is to get the correct question for making the modal persist past a refresh
 }
 
 function closeModal(){
@@ -71,4 +115,10 @@ function closeModal(){
     modal.style.display = "none";
 }
 
+function saveAnswer() {
+    const answer = document.getElementById("theAnswer");
+    localStorage.setItem(`answer${currQuestion}`, answer.value);
+}
+
 setName();
+readInStudents();
