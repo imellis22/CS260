@@ -14,13 +14,13 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+// Get a single question
+apiRouter.get('/question', (_req, res) => {
+  res.send("Hi!");
 });
 
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
+// Submit a single question
+apiRouter.post('/question', (req, res) => {
   scores = updateScores(req.body, scores);
   res.send(scores);
 });

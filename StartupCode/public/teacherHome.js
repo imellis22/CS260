@@ -2,7 +2,7 @@ let numStudents = 0;
 let students = []; 
 const theStudent = 
 {
-    number: 0,
+    id: 0,
     question:""
 }
 
@@ -19,7 +19,7 @@ function addStudent(currStu) {
         currValue = currStu;
     }
 
-    theStudent.number = currValue;
+    theStudent.id = currValue;
 
     const studentList = document.querySelector('#main-page');
 
@@ -35,7 +35,7 @@ function addStudent(currStu) {
     question.textContent = `Question will go here ${currValue}`;
     theStudent.question = question.textContent;
 
-    console.log(theStudent.number);
+    console.log(theStudent.id);
     console.log(theStudent.question);
 
     name.appendChild(question); //adds the question child to the name div
@@ -70,7 +70,10 @@ function addStudent(currStu) {
     localStorage.setItem("numStudents", numStudents);
 }
 
-function readInStudents(){ //going to need to read in the students
+async function readInStudents(){ //going to need to read in the students
+    //this will be for testing an enpoint to see if its working
+    const response = await fetch('/api/question');
+    console.log(response.json());
     let i = 0;
     reading = 1; 
 
