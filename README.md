@@ -26,3 +26,7 @@ valid hyperlinks are created using href
 To point to another DNS record you should use the CNAME record type.  
 
 You can use the fetch command to execute any HTTP method such as POST, PUT, and DELETE. It doesn't only do GET. 
+
+Using a CLI allows for you to access certain functionalities much faster than using a GUI.   
+
+React components really are more and more just fancy HTML elements that dynamically set their components based on user inputs. It's really cool and at least for me makes them a lot easier to think about. 
